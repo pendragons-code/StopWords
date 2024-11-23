@@ -1,4 +1,4 @@
-const test = [
+const responses = [
 	"yes, I use Notion to keep track of the assignments I have, note down deadlines, make notes and have a daily planner",
 	"Yes. I use schedules",
 	"Yes. Copilot",
@@ -17,17 +17,17 @@ const test = [
 	"yes, I use youtube, splms, skillshare and more"
 ];
 
-const platforms = new Set(["notion", "copilot", "brightspace", "splms", "youtube", "google", "google calendar", "politemall", "bunny", "skillshare"]);
+const acceptedWords = new Set(["notion", "copilot", "brightspace", "splms", "youtube", "google", "google calendar", "politemall", "bunny", "skillshare"]);
 
 const cleaningRegex = /[.,']|\s+/g;
 
-const uniqueWords = test.reduce((wordSet, response) => {
+const uniqueWords = responses.reduce((wordSet, response) => {
 	const words = response
 		.toLowerCase()
 		.replace(cleaningRegex, ' ')
 		.trim()
 		.split(' ')
-		.filter(word => word && !platforms.has(word));
+		.filter(word => word && !acceptedWords.has(word));
 
 	words.forEach(word => wordSet.add(word));
 	return wordSet;

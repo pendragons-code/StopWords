@@ -5,6 +5,8 @@
 3) run `node sort.js > sort.txt`
 4) copy and paste the results into the stop words section
 
-### effecienc
-
+### effeciency:
 not the best, but im trying i guess
+
+### Who is this for:
+if you have a few words that you intend to accept, but have a lot of words you want to remove
